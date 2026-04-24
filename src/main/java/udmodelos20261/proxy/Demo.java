@@ -7,13 +7,15 @@ import java.util.logging.Logger;
 
 public class Demo {
 
+    private static final Logger logger = Logger.getLogger(Demo.class.getName());
+
     public static void main(String[] args) {
         YouTubeDownloader naiveDownloader = new YouTubeDownloader(new ThirdPartyYouTubeClass());
         YouTubeDownloader smartDownloader = new YouTubeDownloader(new YouTubeCacheProxy());
 
         long naive = test(naiveDownloader);
         long smart = test(smartDownloader);
-        System.out.println("Time saved by caching proxy: " + (naive - smart) + "ms");
+        logger.info("Time saved by caching proxy: " + (naive - smart) + "ms");
 
     }
 
@@ -30,7 +32,7 @@ public class Demo {
         downloader.renderVideoPage("someothervid");
 
         long estimatedTime = System.currentTimeMillis() - startTime;
-        System.out.println("Time elapsed: " + estimatedTime + "ms\n");
+        logger.info("Time elapsed: " + estimatedTime + "ms\n");
         return estimatedTime;
     }
 }
