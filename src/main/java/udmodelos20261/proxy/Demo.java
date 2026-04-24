@@ -3,6 +3,7 @@ package udmodelos20261.proxy;
 import udmodelos20261.proxy.downloader.YouTubeDownloader;
 import udmodelos20261.proxy.proxy.YouTubeCacheProxy;
 import udmodelos20261.proxy.some_cool_media_library.ThirdPartyYouTubeClass;
+import java.util.logging.Logger;
 
 public class Demo {
 
@@ -12,7 +13,7 @@ public class Demo {
 
         long naive = test(naiveDownloader);
         long smart = test(smartDownloader);
-        System.out.print("Time saved by caching proxy: " + (naive - smart) + "ms");
+        logger.info("Time saved by caching proxy: " + (naive - smart) + "ms");
 
     }
 
