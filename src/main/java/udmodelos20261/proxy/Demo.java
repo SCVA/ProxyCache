@@ -13,7 +13,7 @@ public class Demo {
 
         long naive = test(naiveDownloader);
         long smart = test(smartDownloader);
-        Logger.info("Time saved by caching proxy: " + (naive - smart) + "ms");
+        System.out.println("Time saved by caching proxy: " + (naive - smart) + "ms");
 
     }
 
@@ -30,7 +30,7 @@ public class Demo {
         downloader.renderVideoPage("someothervid");
 
         long estimatedTime = System.currentTimeMillis() - startTime;
-        System.out.print("Time elapsed: " + estimatedTime + "ms\n");
+        Logger.info("Time elapsed: " + estimatedTime + "ms\n");
         return estimatedTime;
     }
 }
