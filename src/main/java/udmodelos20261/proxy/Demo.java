@@ -13,7 +13,7 @@ public class Demo {
 
         long naive = test(naiveDownloader);
         long smart = test(smartDownloader);
-        logger.info("Time saved by caching proxy: " + (naive - smart) + "ms");
+        Logger.info("Time saved by caching proxy: " + (naive - smart) + "ms");
 
     }
 
