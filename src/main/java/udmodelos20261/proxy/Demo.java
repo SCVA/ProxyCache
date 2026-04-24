@@ -30,7 +30,7 @@ public class Demo {
         downloader.renderVideoPage("someothervid");
 
         long estimatedTime = System.currentTimeMillis() - startTime;
-        Logger.info("Time elapsed: " + estimatedTime + "ms\n");
+        System.out.println("Time elapsed: " + estimatedTime + "ms\n");
         return estimatedTime;
     }
 }
